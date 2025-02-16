@@ -1,0 +1,33 @@
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-style: outset;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  input {
+    width: 95%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-style: outset;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-style: outset;
+  }
+  
+  button:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }

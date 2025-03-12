@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./NodeList.css"
 
 const NodeList = () => {
     const [nodes, setNodes] = useState([]);
@@ -10,6 +11,7 @@ const NodeList = () => {
         try {
             setLoading(true);
             const response = await axios.get('http://localhost:5000/nodes');
+            console.log(response.data);
             setNodes(response.data);
             setError(null);
         } catch (err) {
@@ -54,16 +56,24 @@ const NodeList = () => {
                 <table className="w-full border-collapse">
                     <thead>
                         <tr>
-                            <th className="border p-2 bg-gray-100 text-left">Name</th>
-                            <th className="border p-2 bg-gray-100 text-left">Type</th>
+                            <th className="border p-2 bg-gray-100 text-left">ID</th>
+                            <th className="border p-2 bg-gray-100 text-left">Chapter Name</th>
+                            <th className="border p-2 bg-gray-100 text-left">Kanji</th>
+                            <th className="border p-2 bg-gray-100 text-left">Translation</th>
+                            <th className="border p-2 bg-gray-100 text-left">Chapter Number</th>
+                            <th className="border p-2 bg-gray-100 text-left">Notes</th>
                         </tr>
                     </thead>
                     <tbody>
                         {nodes.map((node, index) => (
                             <tr key={index}>
+                                <td className="border p-2">{node.id}</td>
                                 <td className="border p-2">{node.chapter_name}</td>
                                 <td className="border p-2">{node.kanji}</td>
+                                <td className="border p-2">{node.translation}</td>
+                                <td className="border p-2">{node.translation}</td>
                                 <td className="border p-2">{node.chapter_number}</td>
+                                <td className="border p-2">{node.notes}</td>
                             </tr>
                         ))}
                     </tbody>

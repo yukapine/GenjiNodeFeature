@@ -1,0 +1,17 @@
+tbody {
+    background-color: aliceblue;
+    width: 60px;
+    text-align: center;
+}
+
+
+td {
+    width: 10rem;
+    height: 1.5rem;
+    border: 1px solid black;
+    
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

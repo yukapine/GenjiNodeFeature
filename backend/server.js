@@ -16,7 +16,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Driver to connect to database
 
 const driver = neo4j.driver(
     "neo4j://localhost:7687",
@@ -72,10 +71,11 @@ app.post("/add-node", async (req, res) => {
 });
 
 app.get("/nodes", async (req, res) => {
+    // make a request to the server with /nodes - creates an asynch request to the server
     const session = driver.session({ database: 'neo4j' }); 
-    //const session = driver.session();
+    
     try {
-        const result = await session.run("MATCH (n:Chapter) RETURN n LIMIT 10");
+        const result = await session.run("MATCH (n) RETURN n");
         const nodes = result.records.map(record => record.get('n').properties);
         res.json(nodes);
     } catch (error) {

@@ -61,8 +61,9 @@ const NodeList = () => {
                     <tbody>
                         {nodes.map((node, index) => (
                             <tr key={index}>
-                                <td className="border p-2">{node.name}</td>
-                                <td className="border p-2">{node.type}</td>
+                                <td className="border p-2">{node.chapter_name}</td>
+                                <td className="border p-2">{node.kanji}</td>
+                                <td className="border p-2">{node.chapter_number}</td>
                             </tr>
                         ))}
                     </tbody>
